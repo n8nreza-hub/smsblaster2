@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- کارت آمار کلی -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="آمار کلی"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#1A237E"
+                    android:paddingBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="تعداد کل: ۰"
+                    android:textSize="15sp"
+                    android:paddingBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/tvTotalSent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="کل ارسال شده: ۰"
+                    android:textSize="15sp"
+                    android:textColor="#2E7D32"
+                    android:paddingBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/tvFailed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ارسال ناموفق: ۰"
+                    android:textSize="15sp"
+                    android:textColor="#C62828"
+                    android:paddingBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="وضعیت: متوقف"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- آمار هر سیم -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="آمار سیم‌کارت‌ها"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#1A237E"
+                    android:paddingBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvSim1Sent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ارسال شده با سیم ۱: ۰"
+                    android:textSize="15sp"
+                    android:textColor="#2E7D32"
+                    android:paddingBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/tvSim2Sent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ارسال شده با سیم ۲: ۰"
+                    android:textSize="15sp"
+                    android:textColor="#1565C0" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- جزئیات پیشرفت -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="جزئیات پیشرفت"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#1A237E"
+                    android:paddingBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvLastIndex"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="آخرین ایندکس: ۰"
+                    android:textSize="14sp"
+                    android:paddingBottom="6dp" />
+
+                <TextView
+                    android:id="@+id/tvCurrentBlock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="بلوک فعلی: ۰"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔄 به‌روزرسانی"
+            android:backgroundTint="#455A64" />
+
+    </LinearLayout>
+</ScrollView>

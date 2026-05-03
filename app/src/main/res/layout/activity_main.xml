@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- عنوان -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="پیامک انبوه دو سیم‌کارته"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:gravity="center"
+            android:paddingBottom="16dp" />
+
+        <!-- اطلاعات سیم‌کارت‌ها -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="اطلاعات سیم‌کارت‌ها"
+                    android:textStyle="bold"
+                    android:textColor="#333"
+                    android:paddingBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvSim1Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="سیم ۱: در حال بارگذاری..."
+                    android:textColor="#2E7D32"
+                    android:paddingBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvSim2Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="سیم ۲: در حال بارگذاری..."
+                    android:textColor="#1565C0" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- انتخاب فایل -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="فایل اکسل"
+                    android:textStyle="bold"
+                    android:textColor="#333"
+                    android:paddingBottom="8dp" />
+
+                <Button
+                    android:id="@+id/btnSelectFile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="انتخاب فایل اکسل (.xlsx)"
+                    android:backgroundTint="#1565C0" />
+
+                <TextView
+                    android:id="@+id/tvImportStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#555"
+                    android:paddingTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvTotalContacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="تعداد کل شماره‌ها: 0"
+                    android:textStyle="bold"
+                    android:textColor="#1A237E"
+                    android:paddingTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- متن پیامک -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="متن پیامک"
+                    android:textStyle="bold"
+                    android:textColor="#333"
+                    android:paddingBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/etMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="متن پیامک را اینجا بنویسید..."
+                    android:minLines="3"
+                    android:maxLines="6"
+                    android:inputType="textMultiLine"
+                    android:gravity="top|right"
+                    android:background="@drawable/bg_edittext"
+                    android:padding="10dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- تنظیمات -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تنظیمات ارسال"
+                    android:textStyle="bold"
+                    android:textColor="#333"
+                    android:paddingBottom="8dp" />
+
+                <!-- اندازه بلوک -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="اندازه بلوک:"
+                        android:textColor="#555" />
+
+                    <EditText
+                        android:id="@+id/etBlockSize"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="250"
+                        android:gravity="center"
+                        android:background="@drawable/bg_edittext"
+                        android:padding="6dp" />
+                </LinearLayout>
+
+                <!-- محدودیت روزانه -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="محدودیت روزانه:"
+                        android:textColor="#555" />
+
+                    <EditText
+                        android:id="@+id/etDailyLimit"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="500"
+                        android:gravity="center"
+                        android:background="@drawable/bg_edittext"
+                        android:padding="6dp" />
+                </LinearLayout>
+
+                <!-- فاصله ارسال -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="فاصله ارسال (ثانیه):"
+                        android:textColor="#555" />
+
+                    <EditText
+                        android:id="@+id/etDelay"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="2"
+                        android:gravity="center"
+                        android:background="@drawable/bg_edittext"
+                        android:padding="6dp" />
+                </LinearLayout>
+
+                <!-- بازه زمانی -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="ساعت شروع تا پایان:"
+                        android:textColor="#555" />
+
+                    <EditText
+                        android:id="@+id/etStartHour"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="8"
+                        android:gravity="center"
+                        android:background="@drawable/bg_edittext"
+                        android:padding="6dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" تا "
+                        android:paddingHorizontal="4dp" />
+
+                    <EditText
+                        android:id="@+id/etEndHour"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="22"
+                        android:gravity="center"
+                        android:background="@drawable/bg_edittext"
+                        android:padding="6dp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSaveSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ذخیره تنظیمات"
+                    android:backgroundTint="#455A64" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- پیشرفت -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/tvSendingStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="وضعیت: متوقف"
+                    android:textColor="#555"
+                    android:paddingBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ارسال شده: 0 از 0"
+                    android:textColor="#333"
+                    android:paddingBottom="8dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progress="0"
+                    android:max="100" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- دکمه‌های کنترل -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="▶ شروع ارسال"
+                android:backgroundTint="#2E7D32" />
+
+            <Button
+                android:id="@+id/btnStop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="■ توقف"
+                android:backgroundTint="#C62828"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <!-- دکمه‌های صفحات دیگر -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="📊 گزارش"
+                android:backgroundTint="#1565C0" />
+
+            <Button
+                android:id="@+id/btnFailed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="❌ ارسال نشده‌ها"
+                android:backgroundTint="#E65100" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

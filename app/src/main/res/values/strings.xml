@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">پیامک انبوه</string>
+    <string name="btn_select_file">انتخاب فایل اکسل</string>
+    <string name="btn_start">شروع ارسال</string>
+    <string name="btn_stop">توقف</string>
+    <string name="btn_report">گزارش</string>
+    <string name="btn_failed">ارسال نشده‌ها</string>
+    <string name="status_stopped">متوقف</string>
+    <string name="status_sending">در حال ارسال...</string>
+    <string name="status_completed">ارسال کامل شد ✅</string>
+    <string name="permission_required">مجوز لازم است</string>
+    <string name="no_file_selected">فایلی انتخاب نشده</string>
+    <string name="settings_saved">تنظیمات ذخیره شد</string>
+</resources>
